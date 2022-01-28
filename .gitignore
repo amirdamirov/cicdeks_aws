@@ -1,0 +1,3 @@
+# ignore files for apps
+apps/taskmanager/node_modules
+apps/taskmanager/.env
