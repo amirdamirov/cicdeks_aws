@@ -1,3 +1,11 @@
 # ignore files for apps
 apps/taskmanager/node_modules
 apps/taskmanager/.env
+
+# ignore files for terraform
+terraform/**/.terraform/*
+terraform/*.tfstate
+terraform/.terraform
+terraform/*.tfvars
+terraform/crash.log
+terraform/crash.*.log
