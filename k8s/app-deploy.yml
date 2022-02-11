@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tskmgr
+  labels:
+    app: tskmgr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tskmgr
+  template:
+    metadata:
+      labels:
+        app: tskmgr
+    spec:
+      containers:
+        - name: tskmgr
+          image: public.ecr.aws/c1h2f5u7/tskmgr:latest
+          env:
+            - name: MONGO_URI
+              value: "mongodb://mongo-0.mongo.default.svc.cluster.local:27017/tasks\_?"
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

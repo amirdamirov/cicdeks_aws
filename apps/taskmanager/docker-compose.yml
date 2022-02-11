@@ -9,7 +9,7 @@ services:
       - 27017:27017
     restart: unless-stopped
   node:
-    image: taskmanager
+    image: public.ecr.aws/c1h2f5u7/tskmgr:latest
     container_name: node
     environment:
       MONGO_URI: "mongodb://mongo:27017"
